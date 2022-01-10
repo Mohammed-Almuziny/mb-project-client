@@ -1,0 +1,97 @@
+.content_chat {
+  background-color: #c0b6b6;
+  padding: 0 1%;
+}
+
+.chatBorder {
+  border: 1px solid black;
+}
+
+.contentHeader {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  height: 5rem;
+  padding-left: 1rem;
+  border-bottom: 0.2rem solid black;
+}
+
+.contentHeader h1 {
+  margin: auto 0 auto 1rem;
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+}
+
+.roomContainer {
+  background-color: white;
+  padding: 4%;
+  overflow-y: scroll;
+  height: 70vh;
+  /* overflow:hidden; */
+  z-index: -1;
+}
+
+.messageBoxLeft {
+  align-self: left;
+  text-align: left;
+  margin-right: 3rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.messageBoxRight {
+  align-self: right;
+  text-align: right;
+  margin-left: 3rem;
+}
+
+.textRight {
+  color: white;
+  font-size: 2rem;
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+  background: #86bb71;
+  border: 0.05rem solid black;
+  border-radius: 0.4rem;
+}
+
+.textLeft {
+  color: white;
+  font-size: 2rem;
+  /* margin-left: 1rem; */
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+  background: #94c2ed;
+  border: 0.05rem solid black;
+  border-radius: 0.4rem;
+}
+
+.formContainer {
+  background-color: white;
+  border-top: 0.2rem solid black;
+  height: 10vh;
+}
+
+.form {
+  display: flex;
+  padding: 1% 2%;
+}
+
+@media (max-width: 768px) {
+  .textRight {
+    font-size: 0.7rem;
+  }
+
+  .textLeft {
+    font-size: 0.7rem;
+  }
+
+  .avatar {
+    width: 2rem;
+    height: 2rem;
+  }
+}
