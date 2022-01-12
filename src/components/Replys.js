@@ -25,6 +25,9 @@ export const Replys = ({ replys, getCourseInfo }) => {
           />
         </li>
       )}
+      locale={{
+        emptyText: <p className="emptyText"> no reply yet </p>,
+      }}
     />
   );
 };

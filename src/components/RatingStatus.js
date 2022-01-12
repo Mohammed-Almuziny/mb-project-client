@@ -4,7 +4,7 @@ import { Progress, Rate, Row, Col } from "antd";
 export const RatingStatus = ({ reviews }) => {
   return reviews ? (
     <Row>
-      <Col span={6}>
+      <Col xs={{ span: 24, offset: 0 }} xl={{ span: 6, offset: 0 }}>
         <Col justify="center">
           <Row justify="center">
             <Rate value={reviews.ratingStatus.rating} allowHalf={true} />
@@ -15,7 +15,7 @@ export const RatingStatus = ({ reviews }) => {
           </Row>
         </Col>
       </Col>
-      <Col span={18}>
+      <Col xs={{ span: 24, offset: 0 }} xl={{ span: 18, offset: 0 }}>
         <Row>
           <Col span={16}>
             <Progress
@@ -25,19 +25,19 @@ export const RatingStatus = ({ reviews }) => {
           </Col>
           <Col span={1}> </Col>
           <Col span={7}>
-            <Rate value="1" disabled="true" />
+            <Rate className="stars" value="1" disabled="true" />
           </Col>
         </Row>
         <Row>
           <Col span={16}>
             <Progress
-              percent={reviews.ratingStatus.towStar.toFixed(2)}
+              percent={reviews.ratingStatus.twoStar.toFixed(2)}
               size="small"
             />
           </Col>
           <Col span={1}> </Col>
           <Col span={7}>
-            <Rate value="2" disabled="true" />
+            <Rate className="stars" value="2" disabled="true" />
           </Col>
         </Row>
         <Row>
@@ -49,19 +49,19 @@ export const RatingStatus = ({ reviews }) => {
           </Col>
           <Col span={1}> </Col>
           <Col span={7}>
-            <Rate value="3" disabled="true" />
+            <Rate className="stars" value="3" disabled="true" />
           </Col>
         </Row>
         <Row>
           <Col span={16}>
             <Progress
-              percent={reviews.ratingStatus.foreStar.toFixed(2)}
+              percent={reviews.ratingStatus.fourStar.toFixed(2)}
               size="small"
             />
           </Col>
           <Col span={1}> </Col>
           <Col span={7}>
-            <Rate value="4" disabled="true" />
+            <Rate className="stars" value="4" disabled="true" />
           </Col>
         </Row>
         <Row>
@@ -73,7 +73,7 @@ export const RatingStatus = ({ reviews }) => {
           </Col>
           <Col span={1}> </Col>
           <Col span={7}>
-            <Rate value="5" disabled="true" />
+            <Rate className="stars" value="5" disabled="true" />
           </Col>
         </Row>
       </Col>

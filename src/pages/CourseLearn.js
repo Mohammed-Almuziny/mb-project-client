@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import axios from "axios";
-import { Layout, Menu, Empty } from "antd";
+import { Layout, Menu } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 
 import { Comments } from "./../components/Comments";
@@ -74,10 +74,7 @@ export const CourseLearn = () => {
             ))}
           </Menu>
         ) : (
-          <Empty
-            theme="dark"
-            description={<span style={{ color: "white" }}> no lesson yet</span>}
-          />
+          <span className="center noContentText">no lesson yet</span>
         )}
       </Sider>
 
@@ -85,7 +82,7 @@ export const CourseLearn = () => {
         <h1>{course.title}</h1>
 
         <h2>
-          created by :{" "}
+          created by :
           <Link to={`/user/${course.creator._id}`}>{course.creator.name}</Link>
         </h2>
 
@@ -104,7 +101,7 @@ export const CourseLearn = () => {
       </Content>
     </Layout>
   ) : (
-    <Layout.Content className="content">
+    <Layout.Content className="center">
       <LoadingOutlined className="loadingIcon" />
     </Layout.Content>
   );

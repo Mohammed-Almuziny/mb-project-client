@@ -44,6 +44,9 @@ export const Comments = ({ course, getCourseInfo }) => {
             <hr />
           </>
         )}
+        locale={{
+          emptyText: <p className="emptyText"> no comment yet </p>,
+        }}
       />
     </>
   );

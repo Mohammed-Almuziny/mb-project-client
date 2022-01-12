@@ -90,8 +90,12 @@ export const CourseInfo = () => {
       <h2>About</h2>
       <p>{course.about}</p>
 
-      <h2>rating status</h2>
-      {reviews && reviews.result[0] && <RatingStatus reviews={reviews} />}
+      {reviews && reviews.result[0] && (
+        <>
+          <h2>rating status</h2>
+          <RatingStatus reviews={reviews} />
+        </>
+      )}
 
       <h2>Reviews</h2>
       {userId && (
@@ -104,7 +108,7 @@ export const CourseInfo = () => {
       {reviews && reviews.result[0] && <Reviews reviews={reviews} />}
     </Layout.Content>
   ) : (
-    <Layout.Content className="content">
+    <Layout.Content className="center">
       <LoadingOutlined className="loadingIcon" />
     </Layout.Content>
   );

@@ -35,19 +35,25 @@ body {
   padding: 0 2%;
 }
 
-.box {
-  background-color: white;
-  padding: 2rem;
-}
 
 .title {
   text-align: center;
   margin: 2rem 0;
 }
 
-.centering {
+.center {
   display: flex;
   justify-content: center;
+}
+
+.box {
+  background-color: white;
+  padding: 2rem;
+}
+
+.logIn {
+  width: 50%;
+  margin: 0 auto;
 }
 
 .loadingIcon {
@@ -76,17 +82,53 @@ body {
   margin-top: 2rem;
 }
 
+.userInfoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.userInfoHeader div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .courseInfoHeader button {
   display: block;
   width: 10rem;
 }
 
-@media (max-width: 768px) {
-  .textRight {
-    font-size: 0.7rem;
-  }
+.noContentText {
+  color: white;
+  width: 0 auto;
+  padding-top: 1rem;
+}
 
+.emptyText {
+  color: black;
+}
+
+@media (max-width: 768px) {
   .header {
     padding: 0 10px;
+  }
+
+  .logIn {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .stars {
+    font-size: 9px;
+  }
+
+  .userInfoHeader {
+    flex-direction: column;
+  }
+
+  .userInfoHeader div {
+    margin-bottom: 1rem;
   }
 }

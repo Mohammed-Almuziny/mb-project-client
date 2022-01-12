@@ -154,20 +154,30 @@ export const CreateCourse = () => {
             />
           </Form.Item>
 
-          <Select
-            showSearch
-            placeholder="Select a person"
-            optionFilterProp="children"
-            onChange={(val) => setCategory(val)}
+          <Form.Item
+            name="category"
+            rules={[
+              {
+                required: true,
+                message: "Please select a category",
+              },
+            ]}
           >
-            {["General", "Software", "Business", "Lifestyle"].map(
-              (section, i) => (
-                <Select.Option value={section} key={i + "_section"}>
-                  {section}
-                </Select.Option>
-              )
-            )}
-          </Select>
+            <Select
+              showSearch
+              placeholder="Select a category"
+              optionFilterProp="children"
+              onChange={(val) => setCategory(val)}
+            >
+              {["General", "Software", "Business", "Lifestyle"].map(
+                (section, i) => (
+                  <Select.Option value={section} key={i + "_section"}>
+                    {section}
+                  </Select.Option>
+                )
+              )}
+            </Select>
+          </Form.Item>
 
           <Form.Item>
             <Button

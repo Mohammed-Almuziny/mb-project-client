@@ -67,7 +67,7 @@ export const Login = () => {
     <Layout.Content className="content" style={{ minHeight: "100vh" }}>
       <h1 className="title">Log In</h1>
 
-      <div className="box">
+      <div className="box logIn">
         <Form
           name="normal_login"
           className="login-form"

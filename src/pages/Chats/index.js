@@ -126,6 +126,7 @@ export const Chats = () => {
           ))}
         </Menu>
       </Sider>
+
       <Content className="content_chat">
         {chats[chatIndex] ? (
           <div className="chatBorder">
@@ -145,7 +146,7 @@ export const Chats = () => {
               </h1>
             </div>
             <div className="roomContainer">
-              {messages.map((message) => (
+              {messages.map((message, i) => (
                 <div key={message._id}>
                   <div
                     className={
@@ -154,16 +155,28 @@ export const Chats = () => {
                         : "messageBoxLeft"
                     }
                   >
-                    {message.sender !== userId && (
-                      <Avatar
-                        className="avatar"
-                        src={
-                          chats[chatIndex].user1._id === userId
-                            ? chats[chatIndex].user2.avatar
-                            : chats[chatIndex].user1.avatar
-                        }
-                      />
-                    )}
+                    {message.sender !== userId &&
+                      (i === 0 ? (
+                        <Avatar
+                          className="avatar"
+                          src={
+                            chats[chatIndex].user1._id === userId
+                              ? chats[chatIndex].user2.avatar
+                              : chats[chatIndex].user1.avatar
+                          }
+                        />
+                      ) : (
+                        messages[i - 1].sender === userId && (
+                          <Avatar
+                            className="avatar"
+                            src={
+                              chats[chatIndex].user1._id === userId
+                                ? chats[chatIndex].user2.avatar
+                                : chats[chatIndex].user1.avatar
+                            }
+                          />
+                        )
+                      ))}
 
                     <p
                       className={

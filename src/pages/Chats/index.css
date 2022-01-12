@@ -51,7 +51,7 @@
 
 .textRight {
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0.2rem 0.5rem;
   display: inline-block;
   background: #86bb71;
@@ -61,8 +61,7 @@
 
 .textLeft {
   color: white;
-  font-size: 2rem;
-  /* margin-left: 1rem; */
+  font-size: 1.5rem;
   padding: 0.2rem 0.5rem;
   display: inline-block;
   background: #94c2ed;
