@@ -102,7 +102,7 @@
 
 [Server repository Link](https://github.com/MB-Project-Mohammed-Almuziny/server)
 
-[Deployed App Link](http://heroku.com/)
+[Deployed App Link](https://mb-almuzainy.netlify.app/)
 
 ### Trello
 
