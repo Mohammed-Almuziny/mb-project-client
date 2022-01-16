@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import { Layout, Form, Upload, Input, Select, Button } from "antd";
+import { Layout, Form, Upload, Input, Select, Button, Progress } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 
 import { storage } from "./../utils/firebaseConfig";
@@ -14,6 +14,7 @@ export const CreateCourse = () => {
   const [about, setAbout] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("General");
+  const [uploadProgress, setUploadProgress] = useState(0);
 
   const { userId, token } = useSelector((state) => state.account);
 
@@ -28,6 +29,7 @@ export const CreateCourse = () => {
         const progress = Math.round(
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
+        setUploadProgress(progress);
       },
       (error) => {
         console.log(error);
@@ -78,6 +80,16 @@ export const CreateCourse = () => {
     // eslint-disable-next-line
   }, [thumbnailUrl]);
 
+  useEffect(() => {
+    console.log(thumbnail);
+    // eslint-disable-next-line
+  }, [thumbnail]);
+
+  useEffect(() => {
+    console.log(uploadProgress);
+    // eslint-disable-next-line
+  }, [uploadProgress]);
+
   return (
     <Layout.Content className="content">
       <h1 className="title">create new course</h1>
@@ -95,8 +107,7 @@ export const CreateCourse = () => {
           >
             <Upload
               name="logo"
-              method="GET"
-              action=""
+              beforeUpload="false"
               listType="picture"
               maxCount={1}
               onChange={(e) =>
@@ -178,6 +189,9 @@ export const CreateCourse = () => {
               )}
             </Select>
           </Form.Item>
+
+          <Progress percent={uploadProgress} />
+          <br />
 
           <Form.Item>
             <Button
