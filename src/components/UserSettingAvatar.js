@@ -105,13 +105,10 @@ export const UserSettingAvatar = () => {
           >
             <Upload
               name="avatar"
-              method="GET"
-              action=""
+              beforeUpload="false"
               listType="picture"
               maxCount={1}
-              onChange={(e) =>
-                e.file.status === "done" && setNewAvatar(e.file.originFileObj)
-              }
+              onChange={(e) => setNewAvatar(e.file)}
             >
               <Button icon={<UploadOutlined />}>Click to upload</Button>
             </Upload>

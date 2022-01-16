@@ -110,9 +110,7 @@ export const CreateCourse = () => {
               beforeUpload="false"
               listType="picture"
               maxCount={1}
-              onChange={(e) =>
-                setThumbnail(e.file)
-              }
+              onChange={(e) => setThumbnail(e.file)}
             >
               <Button icon={<UploadOutlined />}>
                 Click to upload thumbnail
