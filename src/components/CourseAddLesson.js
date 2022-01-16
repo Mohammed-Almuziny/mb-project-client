@@ -160,12 +160,9 @@ export const CourseAddLesson = ({ course, getCourseInfo }) => {
           >
             <Upload
               name="video"
-              method="GET"
-              action=""
+              beforeUpload="false"
               maxCount={1}
-              onChange={(e) =>
-                e.file.status === "done" && setLesson(e.file.originFileObj)
-              }
+              onChange={(e) => setLesson(e.file)}
             >
               <Button icon={<UploadOutlined />}>Click to upload</Button>
             </Upload>

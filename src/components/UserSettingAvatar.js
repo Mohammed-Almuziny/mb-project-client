@@ -120,7 +120,7 @@ export const UserSettingAvatar = () => {
               htmlType="submit"
               className="login-form-button"
             >
-              Add
+              change
             </Button>
           </Form.Item>
         </Form>
