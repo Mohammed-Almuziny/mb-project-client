@@ -111,7 +111,7 @@ export const CreateCourse = () => {
               listType="picture"
               maxCount={1}
               onChange={(e) =>
-                e.file.status === "done" && setThumbnail(e.file.originFileObj)
+                setThumbnail(e.file)
               }
             >
               <Button icon={<UploadOutlined />}>
