@@ -43,7 +43,7 @@ export const CourseAddSection = ({ course, getCourseInfo }) => {
 
   return (
     <>
-      <h1 className="title">your course lesson sections</h1>
+      <h1 className="title">Your Course Lesson Sections</h1>
 
       <div className="box">
         {course.lessonSections.map((section, i) => (

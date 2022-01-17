@@ -142,8 +142,9 @@ export const CreateCourse = () => {
               },
             ]}
           >
-            <Input
+            <Input.TextArea 
               placeholder="about"
+              autoSize="true"
               onChange={(e) => setAbout(e.target.value)}
             />
           </Form.Item>
@@ -157,8 +158,9 @@ export const CreateCourse = () => {
               },
             ]}
           >
-            <Input
+            <Input.TextArea
               placeholder="description"
+              autoSize="true"
               onChange={(e) => setDescription(e.target.value)}
             />
           </Form.Item>
@@ -178,7 +180,7 @@ export const CreateCourse = () => {
               optionFilterProp="children"
               onChange={(val) => setCategory(val)}
             >
-              {["General", "Software", "Business", "Lifestyle"].map(
+              {["General", "Software", "Business", "Design"].map(
                 (section, i) => (
                   <Select.Option value={section} key={i + "_section"}>
                     {section}

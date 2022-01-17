@@ -53,7 +53,7 @@ export const CourseLearn = () => {
         onCollapse={() => setCollapsed(!collapsed)}
       >
         <div className="logo" />
-        {course.lessonSections[0] ? (
+        {course.lessonSections[0] && course.lessonSections[0].lessons[0] ? (
           <Menu
             defaultSelectedKeys={[course.lessonSections[0].lessons[0]._id]}
             defaultOpenKeys={[course.lessonSections[0]._id]}

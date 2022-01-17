@@ -6,7 +6,7 @@ import { DownOutlined } from "@ant-design/icons";
 export const LeftSide = () => {
   const navigate = useNavigate();
 
-  const categories = ["General", "Software", "Business", "Lifestyle"];
+  const categories = ["General", "Software", "Business", "Design"];
 
   const menu = (
     <Menu>
@@ -21,7 +21,7 @@ export const LeftSide = () => {
   return (
     <Menu theme="dark" mode="horizontal">
       <Menu.Item onClick={() => navigate("/")} key="logo">
-        CoursesSite
+        Sabura
       </Menu.Item>
 
       <Dropdown overlay={menu}>

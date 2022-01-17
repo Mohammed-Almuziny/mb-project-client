@@ -18,8 +18,6 @@ export const CourseAddLesson = ({ course, getCourseInfo }) => {
   const { token } = useSelector((state) => state.account);
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
-
     if (lesson.type.split("/")[0] === "video") {
       const uploadImg = storage
         .ref(`videos/${course._id}_${sectionIndex}_${lesson.name}`)
@@ -108,7 +106,7 @@ export const CourseAddLesson = ({ course, getCourseInfo }) => {
 
   return (
     <>
-      <h1 className="title">Log In</h1>
+      <h1 className="title">Your Course Lesson</h1>
 
       <div className="box">
         <Select
@@ -162,7 +160,9 @@ export const CourseAddLesson = ({ course, getCourseInfo }) => {
               name="video"
               beforeUpload="false"
               maxCount={1}
-              onChange={(e) => setLesson(e.file)}
+              onChange={(e) =>
+               setLesson(e.file)
+              }
             >
               <Button icon={<UploadOutlined />}>Click to upload</Button>
             </Upload>

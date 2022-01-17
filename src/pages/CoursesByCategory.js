@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { Layout, Input, Row } from "antd";
+import { Layout, Input, Row, Empty } from "antd";
 
 import { CourseCard } from "../components/CourseCard";
 
@@ -42,11 +42,15 @@ export const CoursesByCategory = () => {
         onSearch={(term) => navigate("/search/" + term)}
       />
 
-      <Row gutter={[24, 24]}>
-        {courses.map((course) => (
-          <CourseCard course={course} key={course._id} />
-        ))}
-      </Row>
+      {courses._id ? (
+        <Row gutter={[24, 24]}>
+          {courses.map((course) => (
+            <CourseCard course={course} key={course._id} />
+          ))}
+        </Row>
+      ) : (
+        <Empty description={<span>no course founded</span>} />
+      )}
     </Layout.Content>
   );
 };
