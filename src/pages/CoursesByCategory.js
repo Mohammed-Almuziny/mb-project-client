@@ -42,7 +42,7 @@ export const CoursesByCategory = () => {
         onSearch={(term) => navigate("/search/" + term)}
       />
 
-      {courses._id ? (
+      {courses.length ? (
         <Row gutter={[24, 24]}>
           {courses.map((course) => (
             <CourseCard course={course} key={course._id} />
