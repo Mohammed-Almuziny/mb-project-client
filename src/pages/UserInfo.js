@@ -60,8 +60,8 @@ export const UserInfo = () => {
   }, []);
 
   return userInfo ? (
-    <Layout.Content className="content" style={{ minHeight: "100vh" }}>
-      <div className="box logIn">
+    <Layout.Content className="content">
+      <div className="box">
         <div className="userInfoHeader">
           <div>
             <Avatar src={userInfo.avatar} size={60} />

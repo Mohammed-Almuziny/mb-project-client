@@ -57,7 +57,7 @@ export const CourseInfo = () => {
   }, []);
 
   return course ? (
-    <Layout.Content className="content" style={{ minHeight: "100vh" }}>
+    <Layout.Content className="content">
       <img
         className="thumbnail"
         src={course.thumbnail}

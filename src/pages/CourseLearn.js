@@ -39,10 +39,12 @@ export const CourseLearn = () => {
   }, []);
 
   useEffect(() => {
-    if (course)
-      if (course.lessonContent)
-        if (course.lessonContent[0].lessons)
+    if (course) {
+      console.log("course", course["lessonSections"]);
+      if (course["lessonSections"] !== undefined)
+        if (course.lessonSections[0].lessons[0] !== undefined)
           setLessonContent(course.lessonSections[0].lessons[0].lesson);
+    }
   }, [course]);
 
   return course ? (
