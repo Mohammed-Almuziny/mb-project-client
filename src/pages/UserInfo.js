@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Layout, Button, Avatar, Row } from "antd";
+import { Layout, Button, Avatar, List } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 
 import { CourseCard } from "./../components/CourseCard";
@@ -79,26 +79,35 @@ export const UserInfo = () => {
         <p>{userInfo.about}</p>
         <br />
 
-        <h1>created course</h1>
-        {userInfo.course[0] ? (
-          <Row gutter={[24, 24]}>
-            {userInfo.course.map((course) => (
-              <CourseCard course={course} key={course._id + "created"} />
-            ))}
-          </Row>
-        ) : (
-          <p>this user dont create any course yet</p>
-        )}
-
         <h1>enrole course</h1>
         {userInfo.enrole[0] ? (
-          <Row gutter={[24, 24]}>
-            {userInfo.enrole.map((course) => (
-              <CourseCard course={course} key={course._id + "enrole"} />
-            ))}
-          </Row>
+          // <Row gutter={[24, 24]}>
+          //   {userInfo.enrole.map((course) => (
+          //     <CourseCard course={course} key={course._id + "enrole"} />
+          //   ))}
+          // </Row>
+          <List
+            grid={{
+              gutter: 16,
+              xs: 1,
+              sm: 2,
+              md: 4,
+              lg: 4,
+              xl: 4,
+            }}
+            pagination={{
+              pageSize: 8,
+              showQuickJumper: true,
+            }}
+            dataSource={userInfo.enrole}
+            renderItem={(course) => (
+              <List.Item>
+                <CourseCard course={course} key={course._id} />
+              </List.Item>
+            )}
+          />
         ) : (
-          <p>this user dont create any course yet</p>
+          <p>this user dont enrole to any course yet</p>
         )}
       </div>
     </Layout.Content>

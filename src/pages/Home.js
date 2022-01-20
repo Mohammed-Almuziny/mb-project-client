@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Layout, Input, List } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 
 import { CourseCard } from "./../components/CourseCard";
 
@@ -41,6 +42,11 @@ export const Home = () => {
       />
 
       <List
+        loading={{
+          spinning: courses[0] ? false : true,
+          indicator: <LoadingOutlined />,
+          size: "large",
+        }}
         grid={{
           gutter: 16,
           xs: 1,

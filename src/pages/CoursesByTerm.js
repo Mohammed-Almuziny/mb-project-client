@@ -1,7 +1,8 @@
 import { React, useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { Layout, Input, Row } from "antd";
+import { Layout, Input, List, Empty } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 
 import { CourseCard } from "../components/CourseCard";
 
@@ -41,11 +42,35 @@ export const CoursesByTerm = () => {
         onSearch={(term) => navigate("/search/" + term)}
       />
 
-      <Row gutter={[24, 24]}>
-        {courses.map((course) => (
-          <CourseCard course={course} key={course._id} />
-        ))}
-      </Row>
+      {courses.length ? (
+        <List
+          loading={{
+            spinning: courses[0] ? false : true,
+            indicator: <LoadingOutlined />,
+            size: "large",
+          }}
+          grid={{
+            gutter: 16,
+            xs: 1,
+            sm: 2,
+            md: 4,
+            lg: 4,
+            xl: 4,
+          }}
+          pagination={{
+            pageSize: 8,
+            showQuickJumper: true,
+          }}
+          dataSource={courses}
+          renderItem={(course) => (
+            <List.Item>
+              <CourseCard course={course} key={course._id} />
+            </List.Item>
+          )}
+        />
+      ) : (
+        <Empty description={<span>no course founded</span>} />
+      )}
     </Layout.Content>
   );
 };

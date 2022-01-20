@@ -9,6 +9,7 @@ export const CourseCard = ({ course }) => {
 
   return (
     <Card
+      style={{ height: "100%" }}
       hoverable
       cover={
         <img

@@ -24,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category/:category" element={<CoursesByCategory />} />
+        <Route path="/search" element={<CoursesByTerm />} />
         <Route path="/search/:term" element={<CoursesByTerm />} />
         <Route path="/createCourse" element={<CreateCourse />} />
         <Route path="/course/learn/:courseId" element={<CourseLearn />} />
